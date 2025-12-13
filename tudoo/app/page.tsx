@@ -1,13 +1,14 @@
 import Image from "next/image";
 import React from 'react'
-import AddTask from "./components/addTask";
+import AddTaskText from "./components/addTaskText";
+import TaskList from "./components/taskList";
 
 
 const TaskPage = () => {
   return (
     <div>
-      TaskPage
-      <AddTask/>
+      <AddTaskText/>
+      <TaskList/>
     </div>
   )
 }
