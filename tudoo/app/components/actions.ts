@@ -10,16 +10,17 @@ export async function addTask(formData: FormData) {
 
   await connectDB();
   await Tasks.create({ title, done: false, important: false });
-
-  // makes the page fetch fresh tasks again
   revalidatePath("/");
 }
 
 export async function deleteTask(taskId: string) {
   await connectDB();
-  
   await Tasks.findByIdAndDelete(taskId);
+  revalidatePath("/");
+}
 
-  // refresh the page that shows the list
+export async function completeTask(taskId: string) {
+  await connectDB();
+  await Tasks.findByIdAndUpdate(taskId, { done: true });
   revalidatePath("/");
 }

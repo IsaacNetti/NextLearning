@@ -1,4 +1,5 @@
 import TaskListItemModal from "./taskListItemModal"
+import TaskListItemModalComplete from "./taskListItemModalComplete"
 
 type Props = {
     id: string,
@@ -10,7 +11,7 @@ type Props = {
 const TaskListItem = ({id, title,details,dueDate,important}:Props) => {
   return (
     <li className='list-row'>
-        <input type="checkbox" name="" id="" className="checkbox checkbox-success"/>
+        <TaskListItemModalComplete id={id}/>
         <h1 className={important ? "font-bold" : ""}>{title}</h1>
         <TaskListItemModal id={id}/>
     </li>

@@ -6,7 +6,6 @@ const TaskListItemModal = ({id}: {id:string}) => {
     const dialogId = useId();
  const dialogRef = useRef<HTMLDialogElement>(null);
     return (
-    
     <>
       <button type="button" className='btn btn-soft hover:btn-error' 
        onClick={() => dialogRef.current?.showModal()}
