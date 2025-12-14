@@ -5,7 +5,6 @@ import { unstable_noStore } from "next/cache";
 
 
 const TaskList = async () => {
-  unstable_noStore();
   await connectDB();
   const tasks = await Tasks.find({ done: false }).lean();
 
@@ -13,7 +12,7 @@ const TaskList = async () => {
     <div className='grid grid-cols-5'>
       <ul className='list col-start-2 col-span-3 border rounded  '>
         {tasks.map((t:any) =>(
-          <TaskListItem key={String(t._id)}id={String(t._id)} title={t.title} details={t.details} dueDate={t.dueDate} important={t.dueDate}/>
+          <TaskListItem key={String(t._id)}id={String(t._id)} title={t.title} details={t.details} dueDate={t.dueDate} important={t.important}/>
         ))}
       </ul>
     </div>

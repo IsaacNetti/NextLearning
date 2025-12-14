@@ -7,9 +7,12 @@ import { revalidatePath } from "next/cache";
 export async function addTask(formData: FormData) {
   const title = String(formData.get("title") ?? "").trim();
   if (!title) return;
+  const details = String(formData.get("details") ?? "No details").trim();
+  const dueDateRaw = String(formData.get("dueDate") ?? "");
+  const important = String(formData.get("important") === "on");
 
   await connectDB();
-  await Tasks.create({ title, done: false, important: false });
+  await Tasks.create({ title, done: false, important, dueDate: dueDateRaw ? new Date(dueDateRaw):null, details});
   revalidatePath("/");
 }
 
