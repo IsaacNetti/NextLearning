@@ -1,11 +1,20 @@
-import React from 'react'
-import TaskListItem
- from './taskListItem'
-const TaskList = () => {
+import { connectDB } from "@/lib/mongodb";
+import { Tasks } from "@/models/tasks";
+import TaskListItem from './taskListItem'
+import { unstable_noStore } from "next/cache";
+
+
+const TaskList = async () => {
+  unstable_noStore();
+  await connectDB();
+  const tasks = await Tasks.find();
+
   return (
     <div className='grid grid-cols-5'>
       <ul className='list col-start-2 col-span-3 border rounded  '>
-        <TaskListItem/>
+        {tasks.map((t:any) =>(
+          <TaskListItem key={String(t._id)} title={t.title} details={t.details} dueDate={t.dueDate} important={t.dueDate} done={t.done}/>
+        ))}
       </ul>
     </div>
   )

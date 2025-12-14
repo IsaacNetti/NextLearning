@@ -7,8 +7,7 @@ const AddTaskText = () => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="grid w-full grid-cols-1 gap-3
-    md:grid-cols-7 md:grid-rows-9 md:gap-0">
+    <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-7 md:grid-rows-9 md:gap-0">
       <div className="border-2 border-neutral rounded-full p-4 grid grid-cols-7 col-start-3 col-span-3 row-start-5 ">
         <input type="text" placeholder="What is there TuDoo?" className="outline-none focus:outline-none col-start-1 col-span-6" onFocus={() => setShowDetails(true)}></input>
          
