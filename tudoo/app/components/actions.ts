@@ -14,3 +14,12 @@ export async function addTask(formData: FormData) {
   // makes the page fetch fresh tasks again
   revalidatePath("/");
 }
+
+export async function deleteTask(taskId: string) {
+  await connectDB();
+  
+  await Tasks.findByIdAndDelete(taskId);
+
+  // refresh the page that shows the list
+  revalidatePath("/");
+}

@@ -1,15 +1,18 @@
+import TaskListItemModal from "./taskListItemModal"
+
 type Props = {
+    id: string,
     title: string;
      details: { type: String, default: "", trim: true },
     dueDate: { type: Date, default: null },
     important: { type: Boolean, default: false },
 }
-const TaskListItem = ({title,details,dueDate,important}:Props) => {
+const TaskListItem = ({id, title,details,dueDate,important}:Props) => {
   return (
     <li className='list-row'>
         <input type="checkbox" name="" id="" className="checkbox checkbox-success"/>
         <h1 className={important ? "font-bold" : ""}>{title}</h1>
-        <button className='btn btn-soft hover:btn-error'>X</button>
+        <TaskListItemModal id={id}/>
     </li>
   )
 }
