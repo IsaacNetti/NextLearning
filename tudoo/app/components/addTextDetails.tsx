@@ -2,7 +2,7 @@ import React from 'react'
 
 const AddTextDetails = () => {
   return (
-    <div className='border-x-1 border-b-1 border-neutral col-start-3 row-start-7 col-span-3 mx-10 mb-2.5 grid grid-cols-3'>
+    <div className='border-x border-b border-neutral grid grid-cols-3'>
       <input type="text" name="" id="" placeholder='Details' className='pl-15 my-3.5 focus:outline-none'/> 
       <div className='self-center'>
         <label htmlFor="due-date" className="">Due date: </label>
