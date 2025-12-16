@@ -8,15 +8,15 @@ const AddTaskText = () => {
 
   return (
     <div>
-      <form action={addTask} className="grid w-full grid-cols-1 gap-3 md:grid-cols-7 md:grid-rows-9 md:gap-0">
-          <div className="border-2 border-neutral rounded-full p-4 grid grid-cols-7 col-start-3 col-span-3 row-start-5 ">
+      <form action={addTask} className="grid w-full grid-cols-1 gap-3 md:grid-cols-7 md:grid-rows-7 md:gap-0">
+          <div className="border-2 border-neutral rounded-full p-4 grid grid-cols-7 col-start-3 col-span-3 row-start-4 ">
             <input name="title" type="text" placeholder="What is there TuDoo?" className="outline-none focus:outline-none col-start-1 col-span-6" onFocus={() => setShowDetails(true)}></input>
             <button type="submit" className="btn btn-primary rounded-full" onClick={() => setShowDetails(false)}>+</button>
           </div>
 
           {/* Animated div that shows detail on click and hides them on submit*/}
           <div className={[ 
-            "col-start-3 row-start-6 col-span-3 mx-10 mb-2.5 md:mx-15",
+            "col-start-3 mt-[-13] mb-20 row-start-5 col-span-3 mx-10 md:mb-2.5 md:mx-15 md:mt-0",
             "overflow-hidden origin-top",
             "transition-all duration-200 ease-out motion-reduce:transition-none",
             showDetails
