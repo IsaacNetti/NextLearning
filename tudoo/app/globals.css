@@ -12,3 +12,8 @@ a:hover {
   border-bottom: 2px solid var(--color-primary);
 
 }
+
+ul:empty {
+  display: none;
+}
+
