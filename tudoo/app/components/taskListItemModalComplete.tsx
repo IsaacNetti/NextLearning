@@ -8,7 +8,7 @@ const TaskListItemModalComplete = ({id}: {id:string}) => {
 
   return (
     <>
-      <button type="button"className="checkbox checkbox-success"   
+      <button type="button"className="checkbox checkbox-primary"   
       onClick={() => dialogRef.current?.showModal()}
         aria-haspopup="dialog"
         aria-controls={dialogId}

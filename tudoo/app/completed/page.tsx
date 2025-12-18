@@ -9,7 +9,7 @@ const CompletedPage = async () => {
   return (
     <div className="flex flex-col">
 
-      <h1 className="text-4xl self-center mt-12">Completed Tasks:</h1>
+      <h1 className="text-4xl self-center mt-12 md:mt-25">Completed Tasks:</h1>
       <h1 className="text-4xl self-center mb-12 text-primary"> {completeTasks.length}!</h1>
 
       <div className='min-w-fit grid md:grid-cols-5 '>

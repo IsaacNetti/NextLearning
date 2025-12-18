@@ -2,3 +2,13 @@
 @plugin "daisyui" {
   themes: winter --default;
 }
+
+a {
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+a:hover {
+  border-bottom: 2px solid var(--color-primary);
+
+}
